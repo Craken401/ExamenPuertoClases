@@ -36,10 +36,14 @@ public class Puerto implements Serializable {
     public int contenedoresPorPais(String pais) {
         int total = 0;
 
-        for(int i = 0; i < puerto.length; i++) {
+        for (int i = 0; i < puerto.length; i++) {
             total += puerto[i].contenedoresPorPais(pais);
         }
 
         return total;
+    }
+
+    public String marcarContenedoresPorPesoEnHub(double pesoLimite, int hub_tipo) {
+        return puerto[hub_tipo].marcarContenedoresPorPeso(pesoLimite);
     }
 }

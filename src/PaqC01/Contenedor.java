@@ -1,3 +1,5 @@
+//VÍCTOR NOLASCO SÁNCHEZ
+
 package PaqC01;
 
 import java.io.Serializable;
@@ -35,6 +37,10 @@ public class Contenedor implements Serializable {
         }
     }
 
+    public String infoResumida() {
+        return "ID: " + numeroIdentf + ", Empresa: " + nombreEmpresaEnvia + ", Peso: " + pesoCont + " toneladas, Aduana: " + (aduanas ? "Checkeado" : "No checkeado");
+    }
+
     public int getNumeroIdentf() {
         return numeroIdentf;
     }
@@ -49,6 +55,10 @@ public class Contenedor implements Serializable {
 
     public boolean isAduanas() {
         return aduanas;
+    }
+
+    public void setAduanas(boolean aduanas) {
+        this.aduanas = aduanas;
     }
 
     public int getPrioridad() {

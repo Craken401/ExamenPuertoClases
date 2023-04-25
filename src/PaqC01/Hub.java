@@ -39,7 +39,7 @@ public class Hub implements Serializable {
                     contenedores[i][0] = contenedor;
                     apila = true;
                 }
-                if(apila == true) break;
+                if (apila == true) break;
             }
         }
 
@@ -49,7 +49,7 @@ public class Hub implements Serializable {
                     contenedores[i][1] = contenedor;
                     apila = true;
                 }
-                if(apila == true) break;
+                if (apila == true) break;
             }
         }
 
@@ -60,13 +60,13 @@ public class Hub implements Serializable {
                         contenedores[i][j] = contenedor;
                         apila = true;
                     }
-                    if(apila == true) break;
+                    if (apila == true) break;
                 }
-                if(apila == true) break;
+                if (apila == true) break;
             }
         }
 
-        if(apila == true) {
+        if (apila == true) {
             return true;
         } else return false;
     }
@@ -107,4 +107,24 @@ public class Hub implements Serializable {
         }
         return cantidad;
     }
+
+    public String marcarContenedoresPorPeso(double pesoLimite) {
+        StringBuilder contenedoresInfo = new StringBuilder();
+
+        for (int i = 0; i < contenedores.length; i++) {
+            for (int j = 0; j < contenedores[i].length; j++) {
+                Contenedor c = contenedores[i][j];
+
+                if (c != null && c.getPesoCont() >= pesoLimite) {
+                    c.setAduanas(true);
+                    contenedoresInfo.append(c.infoResumida()).append("\n");
+                }
+            }
+        }
+
+        return contenedoresInfo.toString();
+
+    }
 }
+
+
